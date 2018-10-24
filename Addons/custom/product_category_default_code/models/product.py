@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models
+from odoo import fields, models, api
 
 
 class ProductCategory(models.Model):
@@ -18,4 +18,3 @@ class ProductCategory(models.Model):
                 category.complete_default_code = '%s%s' % (category.parent_id.complete_default_code or '', category.default_code or '')
             else:
                 category.complete_default_code = category.default_code or ''
-
